@@ -37,17 +37,27 @@
 			</p>
 
 			<strong>Synonym:</strong>
-			<a
-				href="https://www.google.com/search?q=Aspiration+Definition"
+			<button
+				type="button"
 				class="btn btn-outline-secondary rounded-pill btn-sm"
-				title="Aspiration definition on Google Dictionary"
-				target="_blank"
-				>Aspiration</a
+				data-bs-toggle="popover"
+				title="Aspiration Definition"
+				data-bs-content="Aspiration means something that you want to do in the future/a job."
 			>
+				Aspiration
+				<button
+					class="btn btn-outline-secondary ms-2 border-0"
+					data-bs-toggle="tooltip"
+					data-bs-placement="left"
+					title="Click on the buttons to the left to see the definition!"
+				>
+					<i class="bi bi-question-circle"></i>
+				</button>
+			</button>
 		</blockquote>
 
 		<div class="mt-3">
-			<i class="text-success"
+			<i
 				>Now that we understand what <strong>ambition</strong> means, let's see how I live
 				with it everyday!</i
 			>
@@ -68,7 +78,7 @@
 		<div class="container">
 			<div class="row">
 				<div
-					class="bg-danger bg-opacity-50 col me-1 mb-1 p-2 rounded-2"
+					class="bg-danger bg-opacity-50 col me-1 mb-1 p-2 rounded-2 shadow"
 					style="text-align: center"
 				>
 					<div class="display-6" title="Laptop">
@@ -84,7 +94,7 @@
 					</p>
 				</div>
 				<div
-					class="bg-warning bg-opacity-50 col ms-1 mb-1 p-2 rounded-2"
+					class="bg-warning bg-opacity-50 col ms-1 mb-1 p-2 rounded-2 shadow"
 					style="text-align: center"
 				>
 					<div class="display-6" title="People">
@@ -102,7 +112,7 @@
 			</div>
 			<div class="row">
 				<div
-					class="bg-success bg-opacity-50 col me-1 mt-1 p-2 rounded-2"
+					class="bg-success bg-opacity-50 col me-1 mt-1 p-2 rounded-2 shadow"
 					style="text-align: center"
 				>
 					<div class="display-6" title="Person presenting">
@@ -117,7 +127,7 @@
 					</p>
 				</div>
 				<div
-					class="bg-primary bg-opacity-50 col ms-1 mt-1 p-2 rounded-2"
+					class="bg-primary bg-opacity-50 col ms-1 mt-1 p-2 rounded-2 shadow"
 					style="text-align: center"
 				>
 					<div class="display-6" title="Building">
@@ -135,37 +145,6 @@
 		</div>
 
 		<p class="mt-3">That is how I live with ambition; through the four points.</p>
-
-		<ul>
-			<li
-				class="text-danger"
-				title="If you want to live with your ambition, you should actually do it! This can be done as a hobby during your free time. So, once you have mastered your ambition, you can confidently to what you really want! So remember, practice makes perfect!"
-				style="cursor: help"
-			>
-				<i class="bi bi-laptop-fill"></i>&nbsp;Practice and Do It
-			</li>
-			<li
-				class="text-warning"
-				title="If you feel like it (and even if you don't, it is recommended to), then you should tell people such as your family, teachers, and close friends about your ambitions. Why? Because people can set you tasks to complete, and they can possibly be of good use for them."
-				style="cursor: help"
-			>
-				<i class="bi bi-people-fill"></i>&nbsp;Tell People
-			</li>
-			<li
-				class="text-success"
-				title="This is similar to telling people, except that you will present to many people. You can give some way for contact, so that they can give you projects."
-				style="cursor: help"
-			>
-				<i class="bi bi-person-video3"></i>&nbsp;Presenting
-			</li>
-			<li
-				class="text-primary"
-				title="Contributing is a great way to see how you feel like in a job-like envrionment. This can be helpful when you start actually getting jobs, since you can get practice in interviews, and the actual projects!"
-				style="cursor: help"
-			>
-				<i class="bi bi-building"></i>&nbsp;Contributing
-			</li>
-		</ul>
 
 		<hr />
 
@@ -248,13 +227,29 @@
 			crossorigin="anonymous"
 		></script>
 
+		<script>
+			const popoverTriggerList = [].slice.call(
+				document.querySelectorAll('[data-bs-toggle="popover"]')
+			);
+			const popoverList = popoverTriggerList.map((popoverTriggerEl) => {
+				return new bootstrap.Popover(popoverTriggerEl);
+			});
+
+			const tooltipTriggerList = [].slice.call(
+				document.querySelectorAll('[data-bs-toggle="tooltip"]')
+			);
+			const tooltipList = tooltipTriggerList.map((tooltipTriggerEl) => {
+				return new bootstrap.Tooltip(tooltipTriggerEl);
+			});
+		</script>
+
 		<!-- Firebase scripts -->
 		<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
 
 		<script>
 			// Your web app's Firebase configuration
-			var firebaseConfig = {
+			const firebaseConfig = {
 				apiKey: "AIzaSyCNbcvzpNZwx67Bqzwjh9rRnpXud6HUbak",
 				authDomain: "testing-409e0.firebaseapp.com",
 				databaseURL: "https://testing-409e0.firebaseio.com",
