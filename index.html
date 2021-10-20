@@ -190,15 +190,25 @@
 		<h5>Ambitions from the Community</h5>
 		<p class="text-muted">See the ambitions from the community below!</p>
 
-		<div class="bg-danger bg-opacity-75 text-white rounded-2 shadow p-3 limitAlert">
-			<strong><i class="bi bi-exclamation-triangle"></i> Important Notice!</strong>
-			<br />
-			<i
-				>Due to network speed limitations, we can only allow a maximum of
-				<strong>25 recent posts</strong> to be shown.</i
-			>
-			<br />
-			<button class="btn btn-danger mt-2 closeLimitAlert">Okay</button>
+		<div class="alert alert-danger alert-dismissible fade show" role="alert">
+			<div>
+				<h6>Post Limitations</h6>
+				<p>
+					Unfortunately, due to network speed limitations, we can only allow a maximum of
+					<strong>25 recent posts</strong> to be shown.
+					<br />
+					Sorry for any inconvenience caused by this.
+				</p>
+				<button class="btn btn-outline-danger" data-bs-dismiss="alert" aria-label="Close">
+					Okay
+				</button>
+			</div>
+			<button
+				type="button"
+				class="btn-close"
+				data-bs-dismiss="alert"
+				aria-label="Close"
+			></button>
 		</div>
 
 		<div class="mt-3 posts">

@@ -1,11 +1,3 @@
-// Limit alert
-const limitAlert = document.querySelector(".limitAlert");
-const closeLimitAlert = document.querySelector(".closeLimitAlert");
-
-closeLimitAlert.addEventListener("click", () => {
-	limitAlert.classList.add("d-none");
-});
-
 // Working with ambition posts
 const addPost = document.querySelector(".addPost");
 const submitInfo = document.querySelector(".submitInfo");
